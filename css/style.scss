@@ -1,0 +1,16 @@
+body {
+	// color: #fff;
+	font-size: 1.2em;
+}
+
+.currentTempBox {
+	color: #fff;
+	padding: 15px;
+	margin-top: 20px;
+	font-weight: bold;
+	border-radius: 8px;
+	background-color: hotpink;
+	.currentTemp {
+		font-size: 5em;
+	}
+}

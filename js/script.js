@@ -44,6 +44,10 @@ $(document).ready(function() {
 				$(".feelsLike").html(weatherData.currently.apparentTemperature);
 				$(".humidity").html(weatherData.currently.humidity);
 				$(".windSpeed").html(weatherData.currently.windSpeed);
+  			
+  			var skycons = new Skycons({"color": "white"});
+  			skycons.set("weatherIcon", weatherData.currently.icon);
+  			skycons.play();	
 			}
 		});
 	}
