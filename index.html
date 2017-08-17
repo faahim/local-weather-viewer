@@ -4,7 +4,8 @@
 	<title>Local Weather Viewer</title>
 	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,500" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
@@ -12,10 +13,27 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-4 currentTempBox text-center">
-				<canvas id="weatherIcon" width="64" height="64"></canvas>
+			<div class="col-5 tempBox text-center">
+				<i class="icon ion-location"></i>
 				<p><span class="locName"></span></p>
+				<canvas id="weatherIcon" width="82" height="82"></canvas>
+				<p><span class="weatherCondition">...</span></p>
 				<p><span class="currentTemp"></span>°F</p>
+				<p><i class="wi wi-barometer"></i>
+					Feels Like: <span class="feelsLike">...</span>°F
+				</p>
+				<div class="row tempBoxSubInfo">
+					<div class="col">
+						<p><i class="wi wi-windy"></i>
+							Wind Speed: <span class="windSpeed">...</span>
+						</p>
+					</div>
+					<div class="col">
+						<p><i class="wi wi-humidity"></i>
+							Humidity: <span class="humidity">...</span>
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -23,9 +41,7 @@
 
 
 
-	<p>Feels Like: <span class="feelsLike">Fetching...</span></p>
-	<p>Wind Speed: <span class="windSpeed">Fetching...</span></p>
-	<p>Humidity: <span class="humidity">Fetching...</span></p>
+	
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>

@@ -41,6 +41,7 @@ $(document).ready(function() {
 			dataType: "jsonp",
 			success: function(weatherData) {
 				$(".currentTemp").html(weatherData.currently.temperature);
+				$(".weatherCondition").html(weatherData.currently.summary);
 				$(".feelsLike").html(weatherData.currently.apparentTemperature);
 				$(".humidity").html(weatherData.currently.humidity);
 				$(".windSpeed").html(weatherData.currently.windSpeed);
