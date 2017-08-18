@@ -1,6 +1,8 @@
 $(document).ready(function() {
 	var lat;
 	var lon;
+	var tempInF;
+	var tempInC;
 
 	function locateYou() {
 
@@ -34,7 +36,7 @@ $(document).ready(function() {
 
 	function getWearher() {
 		var weatherApiKey = "a3219d4e2772db6e34c6491e62144b27";
-		var weatherApiCall = "https://api.darksky.net/forecast/"+weatherApiKey+"/"+lat+","+lon;
+		var weatherApiCall = "https://api.darksky.net/forecast/"+weatherApiKey+"/"+lat+","+lon+"?units=si";
 		$.ajax({
 			url: weatherApiCall,
 			type: "GET",
@@ -42,13 +44,18 @@ $(document).ready(function() {
 			success: function(weatherData) {
 				$(".currentTemp").html(weatherData.currently.temperature);
 				$(".weatherCondition").html(weatherData.currently.summary);
-				$(".feelsLike").html(weatherData.currently.apparentTemperature);
-				$(".humidity").html(weatherData.currently.humidity);
+				$(".feelsLike").html(weatherData.currently.apparentTemperature + " °C");
+				$(".humidity").html(weatherData.currently.humidity * 100);
 				$(".windSpeed").html(weatherData.currently.windSpeed);
   			
   			var skycons = new Skycons({"color": "white"});
   			skycons.set("weatherIcon", weatherData.currently.icon);
-  			skycons.play();	
+  			skycons.play();
+
+  			tempInF = ((weatherData.currently.temperature*9/5) + 32).toFixed(2);
+  			tempInC = weatherData.currently.temperature;
+  			feelsLikeInC = 	weatherData.currently.apparentTemperature;
+  			feelsLikeInF = ((weatherData.currently.apparentTemperature*9/5) + 32).toFixed(2);
 			}
 		});
 	}
@@ -58,8 +65,21 @@ $(document).ready(function() {
 	//UI Tweaks
 
 	$(".convertToggle").on("click", function() {
-		$(".toggleIcon").toggleClass("ion-toggle");
 		$(".toggleIcon").toggleClass("ion-toggle-filled");
+		// $(".currentTemp").text(tempInF);
+		var tmpNow = $(".currentTemp");
+		var unit = $(".unit");
+		var feelsLike = $(".feelsLike");
+
+		if (tmpNow.text() == tempInC) {
+			tmpNow.text(tempInF);
+			unit.text("°F");
+			feelsLike.text(feelsLikeInF + " °F")
+		} else {
+			tmpNow.text(tempInC);
+			unit.text("°C");
+			feelsLike.text(feelsLikeInC + " °C")
+		}
 	});
 
 });

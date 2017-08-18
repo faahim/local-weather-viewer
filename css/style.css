@@ -13,6 +13,8 @@ body {
   background-color: hotpink; }
   .tempBox .currentTemp {
     font-size: 5em; }
+  .tempBox .unit {
+    font-size: 3em; }
   .tempBox .convertToggle .icon {
     position: relative;
     top: 4px; }
