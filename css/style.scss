@@ -17,6 +17,13 @@ body {
 	.currentTemp {
 		font-size: 5em;
 	}
+	.convertToggle {
+		// position: relative;
+		.icon {
+			position: relative;
+			top: 4px;
+		}
+	}
 	.weatherCondition {
 		font-size: 2.5em;
 	}

@@ -13,6 +13,9 @@ body {
   background-color: hotpink; }
   .tempBox .currentTemp {
     font-size: 5em; }
+  .tempBox .convertToggle .icon {
+    position: relative;
+    top: 4px; }
   .tempBox .weatherCondition {
     font-size: 2.5em; }
   .tempBox .tempBoxSubInfo {

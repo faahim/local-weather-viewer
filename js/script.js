@@ -55,4 +55,11 @@ $(document).ready(function() {
 
 	locateYou();
 
+	//UI Tweaks
+
+	$(".convertToggle").on("click", function() {
+		$(".toggleIcon").toggleClass("ion-toggle");
+		$(".toggleIcon").toggleClass("ion-toggle-filled");
+	});
+
 });
