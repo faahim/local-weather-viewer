@@ -39,6 +39,7 @@
 			<div class="col-6 dashboard text-center">
 				<div class="dashboardDaily">
 					<div class="expect">
+						<canvas id="expectIcon" width="80" height="80"></canvas>
 						<p class="text-center thin">Expect <span class="todaySummary">...</span></p>
 					</div>
 					<div class="tempMaxBox">
@@ -50,6 +51,20 @@
 						<p><span class="tempMin text-right"></span><br>
 							<i class="icon ion-arrow-graph-down-right"></i>
 						</p>
+					</div>
+					<div class="row sunTimes justify-items-center">
+						<div class="col sunrise">
+							<p><i class="wi wi-sunrise"></i> <span class="sunriseTime"></span></p>
+						</div>
+						<div class="col sunset">
+							<p><i class="wi wi-sunset"></i> <span class="sunsetTime"></span></p>
+						</div>
+						<div class="col">
+							<p><i class="wi wi-day-cloudy-high"></i> <span class="cloudCover"></span></p>
+						</div>
+						<div class="col">
+							<p><i class="wi wi-raindrop"></i> <span class="dewPoint"></span></p>
+						</div>
 					</div>
 				</div>
 

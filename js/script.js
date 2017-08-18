@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var lon;
 	var tempInF;
 	var tempInC;
+	var timeFormatted;
 
 	function locateYou() {
 
@@ -51,9 +52,24 @@ $(document).ready(function() {
 				$(".todaySummary").html(weatherData.hourly.summary);
 				$(".tempMin").html(weatherData.daily.data[0].temperatureMin+" °C");
 				$(".tempMax").html(weatherData.daily.data[0].temperatureMax+" °C");
+
+				$(".cloudCover").text((weatherData.currently.cloudCover*100)+" %");
+				$(".dewPoint").text(weatherData.currently.dewPoint + " °F");
   			
+  			//Converting UNIX time
+  			unixToTime(weatherData.daily.data[0].sunriseTime);
+  			var sunriseTimeFormatted = timeFormatted+" AM";
+  			$(".sunriseTime").text(sunriseTimeFormatted);
+
+  			unixToTime(weatherData.daily.data[0].sunsetTime);
+  			var sunsetTimeFormatted = timeFormatted+" PM";
+  			$(".sunsetTime").text(sunsetTimeFormatted);
+
+
+  			//Skycon Icons
   			var skycons = new Skycons({"color": "white"});
   			skycons.set("weatherIcon", weatherData.currently.icon);
+  			skycons.set("expectIcon", weatherData.hourly.icon);
   			skycons.play();
 
   			tempInF = ((weatherData.currently.temperature*9/5) + 32).toFixed(2);
@@ -65,6 +81,17 @@ $(document).ready(function() {
 	}
 
 	locateYou();
+
+	//Function for converting UNIX time to Local Time
+
+	function unixToTime(unix) {
+		unix *= 1000;
+		// timeFormatted = 0;
+		var toTime = new Date(unix);
+		var hour = ((toTime.getHours() % 12 || 12 ) < 10 ? '0' : '') + (toTime.getHours() % 12 || 12);
+  	var minute = (toTime.getMinutes() < 10 ? '0' : '') + toTime.getMinutes();
+  	timeFormatted = hour+":"+minute;
+	}
 
 	//UI Tweaks
 

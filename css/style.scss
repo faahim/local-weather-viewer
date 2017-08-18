@@ -51,6 +51,7 @@ body {
 			width: 300px;
 			height: 300px;
 			margin: 0 auto;
+			padding: 10px;
 			// background-color: #ccc;
 			background: linear-gradient(45deg,#30496B,#30B8D2);
 			border-radius: 50%;
@@ -59,6 +60,15 @@ body {
 			color: #fff;
 			position: relative;
 			top: 50px;
+			#expectIcon {
+		    position: absolute;
+		    left: 110px;
+		    top: 65px;
+			}
+			p {
+				position: relative;
+				top: 20px;
+			}
 		}
 		.thin {
 			font-size: 0.8em;
@@ -89,6 +99,13 @@ body {
 			background: linear-gradient(45deg,#6155D4,#5B97F2);
 			bottom: 200px;
     	left: 320px;
+		}
+		.sunTimes {
+			position: relative;
+			bottom: 150px;
+			left: 30px;
+			font-weight: bold;
+			font-size: 0.8em;
 		}
 	}
 }
