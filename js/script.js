@@ -5,6 +5,20 @@ $(document).ready(function() {
 	var tempInC;
 	var timeFormatted;
 
+	//Quotes depending on the weather
+	var weatherQuotes ={
+		rain: "\"The best thing one can do when it's raining is to let it rain.\" -Henry Wadsworth Longfellow",
+		clearDay: "\"Wherever you go, no matter what the weather, always bring your own sunshine.\" -Anthony J. D'Angelo",
+		clearNight: "\"The sky grew darker, painted blue on blue, one stroke at a time, into deeper and deeper shades of night.\" -Haruki Murakami",
+		snow: "\"So comes snow after fire, and even dragons have their ending!\" -J. R. R. Tolkien",
+		sleet: "\"Then come the wild weather, come sleet or come snow, we will stand by each other, however it blow.\" -Simon Dach",
+		wind: "\"Kites rise highest against the wind - not with it.\" -Winston Churchill",
+		fog: "\"It is not the clear-sighted who rule the world. Great achievements are accomplished in a blessed, warm fog.\" -Joseph Conrad",
+		cloudy: "\"Happiness is like a cloud, if you stare at it long enough, it evaporates.\" -Sarah McLachlan",
+		partlyCloudy: "\"Try to be a rainbow in someone's cloud.\" -Maya Angelou",
+		default: "\"There is no such thing as bad weather, only different kinds of good weather.\" -John Ruskin"
+	};
+
 	function locateYou() {
 
 		var ipApiCall = "https://ipapi.co/json";
@@ -76,6 +90,46 @@ $(document).ready(function() {
   			tempInC = weatherData.currently.temperature;
   			feelsLikeInC = 	weatherData.currently.apparentTemperature;
   			feelsLikeInF = ((weatherData.currently.apparentTemperature*9/5) + 32).toFixed(2);
+
+  			//Load Quotes
+
+  			var selectQuote = weatherData.currently.icon;
+  			var loadQuote = $(".quote");
+
+  			switch (weatherData.currently.icon) {
+  				case "clear-day":
+  					$(".quote").text(weatherQuotes.clearDay);
+  					break;
+  				case "clear-night":
+  					$(".quote").text(weatherQuotes.clearNight);
+  					break;
+  				case "rain":
+  					$(".quote").text(weatherQuotes.rain);
+  					break;
+  				case "snow":
+  					$(".quote").text(weatherQuotes.snow);
+  					break;
+  				case "sleet":
+  					$(".quote").text(weatherQuotes.sleet);
+  					break;
+  				case "clear-night":
+  					$(".quote").text(weatherQuotes.clearNight);
+  					break;
+  				case "wind":
+  					$(".quote").text(weatherQuotes.wind);
+  					break;
+  				case "fog":
+  					$(".quote").text(weatherQuotes.fog);
+  					break;
+  				case "cloudy":
+  					$(".quote").text(weatherQuotes.cloudy);
+  					break;
+  				case "partlyCloudy":
+  					$(".quote").text(weatherQuotes.partlyCloudy);
+  					break;
+  				default:
+  					$(".quote").text(weatherQuotes.default);
+  			}
 			}
 		});
 	}

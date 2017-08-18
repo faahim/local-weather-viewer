@@ -80,5 +80,11 @@ body {
       left: 30px;
       font-weight: bold;
       font-size: 0.8em; }
+    .dashboard .dashboardDaily .weatherQuote {
+      font-size: 1em;
+      position: relative;
+      bottom: 120px;
+      font-weight: bold;
+      left: 30px; }
 
 /*# sourceMappingURL=style.css.map */
