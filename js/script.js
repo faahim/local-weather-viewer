@@ -47,6 +47,10 @@ $(document).ready(function() {
 				$(".feelsLike").html(weatherData.currently.apparentTemperature + " °C");
 				$(".humidity").html(weatherData.currently.humidity * 100);
 				$(".windSpeed").html(weatherData.currently.windSpeed);
+				
+				$(".todaySummary").html(weatherData.hourly.summary);
+				$(".tempMin").html(weatherData.daily.data[0].temperatureMin+" °C");
+				$(".tempMax").html(weatherData.daily.data[0].temperatureMax+" °C");
   			
   			var skycons = new Skycons({"color": "white"});
   			skycons.set("weatherIcon", weatherData.currently.icon);

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Local Weather Viewer</title>
-	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,500" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400,500" rel="stylesheet"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
@@ -12,17 +12,16 @@
 <body>
 
 	<div class="container">
-		<div class="row">
+		<div class="row justify-content-around">
+
 			<div class="col-5 tempBox text-center">
 				<i class="icon ion-location"></i>
 				<p><span class="locName"></span></p>
 				<canvas id="weatherIcon" width="100" height="100"></canvas>
 				<p><span class="weatherCondition">...</span></p>
 				<p><span class="currentTemp"></span><span class="unit">°C</span></p>
+				<p><i class="wi wi-barometer"></i> Feels Like: <span class="feelsLike">...</span></p>
 				<p class="convertToggle">C <i class="icon ion-toggle toggleIcon"></i> F</p>
-				<p><i class="wi wi-barometer"></i>
-					Feels Like: <span class="feelsLike">...</span>
-				</p>
 				<div class="row tempBoxSubInfo">
 					<div class="col">
 						<p><i class="wi wi-windy"></i>
@@ -36,6 +35,31 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="col-6 dashboard text-center">
+				<div class="dashboardDaily">
+					<div class="expect">
+						<p class="text-center thin">Expect <span class="todaySummary">...</span></p>
+					</div>
+					<div class="tempMaxBox">
+						<p><i class="icon ion-arrow-graph-up-left"></i><br>
+							<span class="tempMax text-left"></span>
+						</p>
+					</div>
+					<div class="tempMinBox">
+						<p><span class="tempMin text-right"></span><br>
+							<i class="icon ion-arrow-graph-down-right"></i>
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col dashboardWeekly">
+						
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 

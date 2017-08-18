@@ -1,6 +1,8 @@
 body {
 	// color: #fff;
 	font-size: 1.2em;
+	background-color: #E9E9E9;
+	// Alternate bg: #FCF4F7
 }
 
 .icon {
@@ -13,7 +15,9 @@ body {
 	margin-top: 20px;
 	font-weight: bold;
 	border-radius: 8px;
-	background-color: hotpink;
+	background: linear-gradient(160deg,#FBCA88,#EF69AD,#B236D0);
+	// linear-gradient(45deg,#DA1FF2,#4C15D0)
+	// linear-gradient(45deg,#F32F8E,#B236D0)
 	.currentTemp {
 		font-size: 5em;
 	}
@@ -33,5 +37,58 @@ body {
 	.tempBoxSubInfo {
 		font-size: 0.8em;
 		padding: 20px 0;
+	}
+}
+
+.dashboard {
+	margin-top: 20px;
+	// border: 1px solid #ccc;
+	.dashboardDaily {
+		// background-color: #fff;
+		border-radius: 8px;
+		position: relative;
+		.expect {
+			width: 300px;
+			height: 300px;
+			margin: 0 auto;
+			// background-color: #ccc;
+			background: linear-gradient(45deg,#30496B,#30B8D2);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			color: #fff;
+			position: relative;
+			top: 50px;
+		}
+		.thin {
+			font-size: 0.8em;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		.tempMaxBox, .tempMinBox {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			position: relative;
+			color: #fff;
+			font-weight: bold;
+			font-size: 1.2em;
+			display: flex;
+			align-items: center;
+			p {
+				display: inline-block;
+				margin: 0 auto;
+			}
+		}
+		.tempMaxBox {
+			background: linear-gradient(45deg,#F32F8E,#B236D0);
+			bottom: 285px;
+    	left: 60px;
+		}
+		.tempMinBox {
+			background: linear-gradient(45deg,#6155D4,#5B97F2);
+			bottom: 200px;
+    	left: 320px;
+		}
 	}
 }
