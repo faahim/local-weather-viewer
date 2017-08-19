@@ -16,7 +16,7 @@ $(document).ready(function() {
 		fog: "\"It is not the clear-sighted who rule the world. Great achievements are accomplished in a blessed, warm fog.\" -Joseph Conrad",
 		cloudy: "\"Happiness is like a cloud, if you stare at it long enough, it evaporates.\" -Sarah McLachlan",
 		partlyCloudy: "\"Try to be a rainbow in someone's cloud.\" -Maya Angelou",
-		default: "\"There is no such thing as bad weather, only different kinds of good weather.\" -John Ruskin"
+		default: "\"The storm starts, when the drops start dropping When the drops stop dropping then the storm starts stopping.\"― Dr. Seuss "
 	};
 
 	function locateYou() {
@@ -67,7 +67,7 @@ $(document).ready(function() {
 				$(".tempMin").html(weatherData.daily.data[0].temperatureMin+" °C");
 				$(".tempMax").html(weatherData.daily.data[0].temperatureMax+" °C");
 
-				$(".cloudCover").text((weatherData.currently.cloudCover*100)+" %");
+				$(".cloudCover").text((weatherData.currently.cloudCover*100).toFixed(2)+" %");
 				$(".dewPoint").text(weatherData.currently.dewPoint + " °F");
   			
   			//Converting UNIX time

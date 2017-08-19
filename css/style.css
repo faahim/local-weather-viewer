@@ -11,7 +11,8 @@ body {
   margin-top: 20px;
   font-weight: bold;
   border-radius: 8px;
-  background: linear-gradient(160deg, #FBCA88, #EF69AD, #B236D0); }
+  background: linear-gradient(160deg, #FBCA88, #EF69AD, #B236D0);
+  box-shadow: 0 0 25px 3px #bfa8bc; }
   .tempBox .currentTemp {
     font-size: 5em; }
   .tempBox .unit {
@@ -26,14 +27,12 @@ body {
     padding: 20px 0; }
 
 .dashboard {
-  margin-top: 20px; }
+  margin-top: 20px;
+  border-radius: 8px; }
   .dashboard .dashboardDaily {
-    border-radius: 8px;
     position: relative; }
     .dashboard .dashboardDaily .expect {
-      width: 300px;
       height: 300px;
-      margin: 0 auto;
       padding: 10px;
       background: linear-gradient(45deg, #30496B, #30B8D2);
       border-radius: 50%;
@@ -41,10 +40,10 @@ body {
       align-items: center;
       color: #fff;
       position: relative;
-      top: 50px; }
+      box-shadow: 0 0 25px 3px #bfa8bc; }
       .dashboard .dashboardDaily .expect #expectIcon {
         position: absolute;
-        left: 110px;
+        left: 102px;
         top: 65px; }
       .dashboard .dashboardDaily .expect p {
         position: relative;
@@ -54,7 +53,6 @@ body {
       font-weight: bold;
       text-transform: uppercase; }
     .dashboard .dashboardDaily .tempMaxBox, .dashboard .dashboardDaily .tempMinBox {
-      width: 150px;
       height: 150px;
       border-radius: 50%;
       position: relative;
@@ -62,29 +60,46 @@ body {
       font-weight: bold;
       font-size: 1.2em;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      z-index: 2;
+      box-shadow: 0 0 25px 3px #bfa8bc; }
       .dashboard .dashboardDaily .tempMaxBox p, .dashboard .dashboardDaily .tempMinBox p {
-        display: inline-block;
-        margin: 0 auto; }
+        display: inline-block; }
     .dashboard .dashboardDaily .tempMaxBox {
       background: linear-gradient(45deg, #F32F8E, #B236D0);
-      bottom: 285px;
-      left: 60px; }
+      left: 40px; }
+      .dashboard .dashboardDaily .tempMaxBox p {
+        margin: 0 auto 40px; }
     .dashboard .dashboardDaily .tempMinBox {
-      background: linear-gradient(45deg, #6155D4, #5B97F2);
-      bottom: 200px;
-      left: 320px; }
-    .dashboard .dashboardDaily .sunTimes {
-      position: relative;
-      bottom: 150px;
-      left: 30px;
+      background: linear-gradient(45deg, #833DB8, #B998DD);
+      top: 150px;
+      right: 40px; }
+      .dashboard .dashboardDaily .tempMinBox p {
+        margin: 40px auto 0; }
+  .dashboard .sunTimes {
+    margin-top: 10%;
+    font-weight: bold;
+    font-size: 0.8em; }
+  .dashboard .weatherQuote {
+    margin-top: 10%;
+    font-size: 1em;
+    font-weight: bold; }
+  .dashboard .weeklyButton {
+    margin-top: 10%; }
+    .dashboard .weeklyButton a {
+      padding: 15px;
+      border-radius: 5px;
+      text-decoration: none;
       font-weight: bold;
-      font-size: 0.8em; }
-    .dashboard .dashboardDaily .weatherQuote {
-      font-size: 1em;
-      position: relative;
-      bottom: 120px;
-      font-weight: bold;
-      left: 30px; }
+      color: #fff;
+      background-image: linear-gradient(220deg, #ec77ab, #7873f5);
+      box-shadow: 0 0 25px 3px #bfa8bc;
+      transition: 0.5s; }
+      .dashboard .weeklyButton a:hover {
+        box-shadow: 8px 8px 25px 6px #bfa8bc; }
+      .dashboard .weeklyButton a i {
+        font-size: 1.2em;
+        position: relative;
+        top: 3px; }
 
 /*# sourceMappingURL=style.css.map */

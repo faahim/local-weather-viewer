@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Local Weather Viewer</title>
 	<!-- <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400,500" rel="stylesheet"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -16,12 +17,12 @@
 
 			<div class="col-5 tempBox text-center">
 				<i class="icon ion-location"></i>
-				<p><span class="locName"></span></p>
+				<p><span class="locName">Your Location Here</span></p>
 				<canvas id="weatherIcon" width="100" height="100"></canvas>
 				<p><span class="weatherCondition">...</span></p>
 				<p><span class="currentTemp"></span><span class="unit">°C</span></p>
 				<p><i class="wi wi-barometer"></i> Feels Like: <span class="feelsLike">...</span></p>
-				<p class="convertToggle">C <i class="icon ion-toggle toggleIcon"></i> F</p>
+				<p class="convertToggle">°C <i class="icon ion-toggle toggleIcon"></i> °F</p>
 				<div class="row tempBoxSubInfo">
 					<div class="col">
 						<p><i class="wi wi-windy"></i>
@@ -37,49 +38,53 @@
 			</div>
 
 			<div class="col-6 dashboard text-center">
-				<div class="dashboardDaily">
-					<div class="expect">
-						<canvas id="expectIcon" width="80" height="80"></canvas>
-						<p class="text-center thin">Expect <span class="todaySummary">...</span></p>
-					</div>
-					<div class="tempMaxBox">
+
+				<div class="row justify-content-center dashboardDaily">
+					<div class="col-3 tempMaxBox">
 						<p><i class="icon ion-arrow-graph-up-left"></i><br>
 							<span class="tempMax text-left"></span>
 						</p>
 					</div>
-					<div class="tempMinBox">
+					<div class="col-6 expect">
+						<canvas id="expectIcon" width="80" height="80"></canvas> <br>
+						<p class="text-center thin">Expect <span class="todaySummary">...</span></p>
+					</div>
+					<div class="col-3 tempMinBox">
 						<p><span class="tempMin text-right"></span><br>
 							<i class="icon ion-arrow-graph-down-right"></i>
 						</p>
 					</div>
-					<div class="row sunTimes justify-items-center">
-						<div class="col sunrise">
-							<p><i class="wi wi-sunrise"></i> <span class="sunriseTime"></span></p>
-						</div>
-						<div class="col sunset">
-							<p><i class="wi wi-sunset"></i> <span class="sunsetTime"></span></p>
-						</div>
-						<div class="col">
-							<p><i class="wi wi-day-cloudy-high"></i> <span class="cloudCover"></span></p>
-						</div>
-						<div class="col">
-							<p><i class="wi wi-raindrop"></i> <span class="dewPoint"></span></p>
-						</div>
-					</div>
-
-					<div class="row weatherQuote">
-						<p class="quote"></p>
-					</div>
-
 				</div>
+
+				<div class="row sunTimes justify-content-center">
+					<div class="col sunrise">
+						<p><i class="wi wi-sunrise"></i> <span class="sunriseTime"></span></p>
+					</div>
+					<div class="col sunset">
+						<p><i class="wi wi-sunset"></i> <span class="sunsetTime"></span></p>
+					</div>
+					<div class="col">
+						<p><i class="wi wi-day-cloudy-high"></i> <span class="cloudCover"></span></p>
+					</div>
+					<div class="col">
+						<p><i class="wi wi-raindrop"></i> <span class="dewPoint"></span></p>
+					</div>
+				</div>
+
+				<div class="row weatherQuote text-center">
+					<p class="quote">"There is no such thing as bad weather, only different kinds of good weather." -John Ruskin</p>
+				</div>
+
+				<div class="row justify-content-center weeklyButton">
+					<div class="col-5">
+						<a href="#">Weekly Forecast <i class="icon ion-ios-arrow-down"></i></a>
+					</div>
+				</div>
+
 			</div>
 
 		</div>
 	</div>
-
-
-
-
 	
 
 	<!-- Scripts -->
