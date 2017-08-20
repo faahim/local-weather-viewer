@@ -79,9 +79,18 @@ $(document).ready(function() {
   			var sunsetTimeFormatted = timeFormatted+" PM";
   			$(".sunsetTime").text(sunsetTimeFormatted);
 
+  			//Loading weekly Data in UI
+  			var skycons = new Skycons({"color": "white"});
+
+  			for (i=1; i<7; i++) {
+  				$(".weekDayTempMax"+i).text(weatherData.daily.data[i].temperatureMax);
+  				$(".weekDayTempMin"+i).text(weatherData.daily.data[i].temperatureMin);
+  				$(".weekDaySunrise"+i).text(unixToTime(weatherData.daily.data[i].sunriseTime));
+  				$(".weekDaySunset"+i).text(unixToTime(weatherData.daily.data[i].sunsetTime));
+  				skycons.set("weatherIcon"+i, weatherData.daily.data[i].icon);
+  			}
 
   			//Skycon Icons
-  			var skycons = new Skycons({"color": "white"});
   			skycons.set("weatherIcon", weatherData.currently.icon);
   			skycons.set("expectIcon", weatherData.hourly.icon);
   			skycons.play();
@@ -145,6 +154,7 @@ $(document).ready(function() {
 		var hour = ((toTime.getHours() % 12 || 12 ) < 10 ? '0' : '') + (toTime.getHours() % 12 || 12);
   	var minute = (toTime.getMinutes() < 10 ? '0' : '') + toTime.getMinutes();
   	timeFormatted = hour+":"+minute;
+  	return timeFormatted;
 	}
 
 	//UI Tweaks

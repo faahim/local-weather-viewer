@@ -1,11 +1,11 @@
 body {
-  font-size: 1.2em;
-  background-color: #E9E9E9; }
+  background-color: #E9E9E9;
+  margin: 0; }
 
 .icon {
   font-size: 1.5em; }
 
-.tempBox {
+#dailyForecast .tempBox {
   color: #fff;
   padding: 15px;
   margin-top: 20px;
@@ -13,27 +13,30 @@ body {
   border-radius: 8px;
   background: linear-gradient(160deg, #FBCA88, #EF69AD, #B236D0);
   box-shadow: 0 0 25px 3px #bfa8bc; }
-  .tempBox .currentTemp {
+  #dailyForecast .tempBox .currentTemp {
     font-size: 5em; }
-  .tempBox .unit {
+  #dailyForecast .tempBox .unit {
     font-size: 3em; }
-  .tempBox .convertToggle .icon {
+  #dailyForecast .tempBox p.m0 {
+    margin: 0; }
+  #dailyForecast .tempBox .convertToggle .icon {
     position: relative;
     top: 4px; }
-  .tempBox .weatherCondition {
+  #dailyForecast .tempBox .weatherCondition {
     font-size: 2.5em; }
-  .tempBox .tempBoxSubInfo {
+  #dailyForecast .tempBox .tempBoxSubInfo {
     font-size: 0.8em;
-    padding: 20px 0; }
-
-.dashboard {
+    padding: 20px 0 0; }
+    #dailyForecast .tempBox .tempBoxSubInfo p {
+      margin: 0; }
+#dailyForecast .dashboard {
   margin-top: 20px;
   border-radius: 8px; }
-  .dashboard .dashboardDaily {
+  #dailyForecast .dashboard .dashboardDaily {
     position: relative; }
-    .dashboard .dashboardDaily .expect {
+    #dailyForecast .dashboard .dashboardDaily .expect {
       height: 300px;
-      padding: 10px;
+      padding: 20px;
       background: linear-gradient(45deg, #30496B, #30B8D2);
       border-radius: 50%;
       display: flex;
@@ -41,18 +44,18 @@ body {
       color: #fff;
       position: relative;
       box-shadow: 0 0 25px 3px #bfa8bc; }
-      .dashboard .dashboardDaily .expect #expectIcon {
+      #dailyForecast .dashboard .dashboardDaily .expect #expectIcon {
         position: absolute;
         left: 102px;
         top: 65px; }
-      .dashboard .dashboardDaily .expect p {
+      #dailyForecast .dashboard .dashboardDaily .expect p {
         position: relative;
         top: 20px; }
-    .dashboard .dashboardDaily .thin {
+    #dailyForecast .dashboard .dashboardDaily .thin {
       font-size: 0.8em;
       font-weight: bold;
       text-transform: uppercase; }
-    .dashboard .dashboardDaily .tempMaxBox, .dashboard .dashboardDaily .tempMinBox {
+    #dailyForecast .dashboard .dashboardDaily .tempMaxBox, #dailyForecast .dashboard .dashboardDaily .tempMinBox {
       height: 150px;
       border-radius: 50%;
       position: relative;
@@ -63,30 +66,30 @@ body {
       align-items: center;
       z-index: 2;
       box-shadow: 0 0 25px 3px #bfa8bc; }
-      .dashboard .dashboardDaily .tempMaxBox p, .dashboard .dashboardDaily .tempMinBox p {
+      #dailyForecast .dashboard .dashboardDaily .tempMaxBox p, #dailyForecast .dashboard .dashboardDaily .tempMinBox p {
         display: inline-block; }
-    .dashboard .dashboardDaily .tempMaxBox {
+    #dailyForecast .dashboard .dashboardDaily .tempMaxBox {
       background: linear-gradient(45deg, #F32F8E, #B236D0);
       left: 40px; }
-      .dashboard .dashboardDaily .tempMaxBox p {
+      #dailyForecast .dashboard .dashboardDaily .tempMaxBox p {
         margin: 0 auto 40px; }
-    .dashboard .dashboardDaily .tempMinBox {
+    #dailyForecast .dashboard .dashboardDaily .tempMinBox {
       background: linear-gradient(45deg, #833DB8, #B998DD);
       top: 150px;
       right: 40px; }
-      .dashboard .dashboardDaily .tempMinBox p {
+      #dailyForecast .dashboard .dashboardDaily .tempMinBox p {
         margin: 40px auto 0; }
-  .dashboard .sunTimes {
-    margin-top: 10%;
+  #dailyForecast .dashboard .sunTimes {
+    margin-top: 5%;
     font-weight: bold;
     font-size: 0.8em; }
-  .dashboard .weatherQuote {
-    margin-top: 10%;
+  #dailyForecast .dashboard .weatherQuote {
+    margin-top: 5%;
     font-size: 1em;
     font-weight: bold; }
-  .dashboard .weeklyButton {
-    margin-top: 10%; }
-    .dashboard .weeklyButton a {
+  #dailyForecast .dashboard .weeklyButton {
+    margin-top: 5%; }
+    #dailyForecast .dashboard .weeklyButton a {
       padding: 15px;
       border-radius: 5px;
       text-decoration: none;
@@ -95,11 +98,29 @@ body {
       background-image: linear-gradient(220deg, #ec77ab, #7873f5);
       box-shadow: 0 0 25px 3px #bfa8bc;
       transition: 0.5s; }
-      .dashboard .weeklyButton a:hover {
-        box-shadow: 8px 8px 25px 6px #bfa8bc; }
-      .dashboard .weeklyButton a i {
+      #dailyForecast .dashboard .weeklyButton a:hover {
+        box-shadow: 5px 5px 25px 6px #bfa8bc; }
+      #dailyForecast .dashboard .weeklyButton a i {
         font-size: 1.2em;
         position: relative;
         top: 3px; }
+
+#weeklyForecast {
+  padding: 50px 0; }
+  #weeklyForecast .weekRows {
+    margin: 50px 0; }
+    #weeklyForecast .weekRows .dayCard {
+      box-shadow: 0 0 25px 3px #bfa8bc;
+      overflow: hidden;
+      border-radius: 5px; }
+      #weeklyForecast .weekRows .dayCard p {
+        display: inline-block; }
+      #weeklyForecast .weekRows .dayCard .dayIconHighlight {
+        background-color: #1343B9;
+        color: #fff;
+        padding: 10px; }
+      #weeklyForecast .weekRows .dayCard .dayInfoHighlight {
+        background-color: #fff;
+        padding: 10px; }
 
 /*# sourceMappingURL=style.css.map */
