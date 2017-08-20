@@ -106,7 +106,9 @@ body {
         top: 3px; }
 
 #weeklyForecast {
-  padding: 50px 0; }
+  padding: 100px 0; }
+  #weeklyForecast h3 {
+    line-height: 50px; }
   #weeklyForecast .weekRows {
     margin: 50px 0; }
     #weeklyForecast .weekRows .dayCard {
@@ -118,9 +120,38 @@ body {
       #weeklyForecast .weekRows .dayCard .dayIconHighlight {
         background-color: #1343B9;
         color: #fff;
-        padding: 10px; }
+        padding: 30px 10px 10px; }
+        #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin {
+          position: relative; }
+          #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin p {
+            position: absolute; }
+            #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin p:first-child {
+              left: 0; }
+            #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin p:last-child {
+              right: 0; }
+              #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin p:last-child i {
+                position: relative;
+                top: 5px; }
       #weeklyForecast .weekRows .dayCard .dayInfoHighlight {
         background-color: #fff;
         padding: 10px; }
+        #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDay p {
+          font-size: 1.5em;
+          font-weight: bold; }
+        #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySummary {
+          height: 50px; }
+          #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySummary p {
+            margin: 0; }
+        #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySun p {
+          margin-right: 20px;
+          padding-top: 5px; }
+          #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySun p:last-child {
+            margin-right: 0;
+            margin-left: 20px; }
+        #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDayWindnHumidity p {
+          margin-right: 10px;
+          font-size: 0.8em; }
+          #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDayWindnHumidity p:last-child {
+            margin-right: 0; }
 
 /*# sourceMappingURL=style.css.map */

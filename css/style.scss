@@ -149,7 +149,10 @@ body {
 }
 
 #weeklyForecast {
-	padding: 50px 0;
+	padding: 100px 0;
+	h3 {
+		line-height: 50px;
+	}
 	.weekRows {
 		margin: 50px 0;
 		.dayCard {
@@ -163,11 +166,58 @@ body {
 			.dayIconHighlight {
 				background-color: #1343B9;
 				color: #fff;
-				padding: 10px;
+				padding: 30px 10px 10px;
+				.dayMaxMin {
+					position: relative;
+					p{
+						position: absolute;
+						&:first-child {
+							left: 0
+						}
+						&:last-child {
+							right: 0;
+							i {
+								position: relative;
+								top: 5px;
+							}
+						}
+					}
+				}
 			}
 			.dayInfoHighlight {
 				background-color: #fff;
 				padding: 10px;
+				.weekDay {
+					p {
+						font-size: 1.5em;
+						font-weight: bold;
+					}
+				}
+				.weekDaySummary {
+					height: 50px;
+					p {
+						margin: 0;
+					}
+				}
+				.weekDaySun {
+					p {
+						margin-right: 20px;
+						padding-top: 5px;
+						&:last-child {
+							margin-right: 0;
+							margin-left: 20px;
+						}
+					}
+				}
+				.weekDayWindnHumidity {
+					p {
+						margin-right: 10px;
+						font-size: 0.8em;
+						&:last-child {
+							margin-right: 0;
+						}
+					}
+				}
 			}
 		}
 	}

@@ -61,7 +61,7 @@ $(document).ready(function() {
 				$(".weatherCondition").html(weatherData.currently.summary);
 				$(".feelsLike").html(weatherData.currently.apparentTemperature + " °C");
 				$(".humidity").html(weatherData.currently.humidity * 100);
-				$(".windSpeed").html(weatherData.currently.windSpeed);
+				$(".windSpeed").html((weatherData.currently.windSpeed/0.6213).toFixed(2));
 				
 				$(".todaySummary").html(weatherData.hourly.summary);
 				$(".tempMin").html(weatherData.daily.data[0].temperatureMin+" °C");
@@ -80,6 +80,7 @@ $(document).ready(function() {
   			$(".sunsetTime").text(sunsetTimeFormatted);
 
   			//Loading weekly Data in UI
+  			$(".weekDaysSummary").text(weatherData.daily.summary);
   			var skycons = new Skycons({"color": "white"});
 
   			for (i=1; i<7; i++) {
@@ -87,6 +88,11 @@ $(document).ready(function() {
   				$(".weekDayTempMin"+i).text(weatherData.daily.data[i].temperatureMin);
   				$(".weekDaySunrise"+i).text(unixToTime(weatherData.daily.data[i].sunriseTime));
   				$(".weekDaySunset"+i).text(unixToTime(weatherData.daily.data[i].sunsetTime));
+  				$(".weekDayName"+i).text(unixToWeekday(weatherData.daily.data[i].time));
+  				$(".weekDaySummary"+i).text(weatherData.daily.data[i].summary);
+  				$(".weekDayWind"+i).text((weatherData.daily.data[i].windSpeed/0.6213).toFixed(2));
+  				$(".weekDayHumid"+i).text(weatherData.daily.data[i].humidity*100);
+  				$(".weekDayCloud"+i).text(weatherData.daily.data[i].cloudCover*100);
   				skycons.set("weatherIcon"+i, weatherData.daily.data[i].icon);
   			}
 
@@ -155,6 +161,15 @@ $(document).ready(function() {
   	var minute = (toTime.getMinutes() < 10 ? '0' : '') + toTime.getMinutes();
   	timeFormatted = hour+":"+minute;
   	return timeFormatted;
+	}
+
+	function unixToWeekday(unix) {
+		unix *= 1000;
+		var toWeekday = new Date(unix);
+		var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+		var weekday = days[toWeekday.getDay()];
+		console.log(weekday);
+		return weekday;
 	}
 
 	//UI Tweaks
