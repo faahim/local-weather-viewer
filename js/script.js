@@ -192,4 +192,41 @@ $(document).ready(function() {
 		}
 	});
 
+	//Google location Search input Test
+
+	function initialize() {
+    
+    var input = document.getElementById('locSearchBox');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        // $('.error').addClass('hidden');
+        // if($('.panel').hasClass('hidden')){
+        //   $('.panel').removeClass('hidden');
+        // }
+  
+        var place = autocomplete.getPlace();
+        console.log(place);
+        console.log(place.formatted_address);
+        console.log(place.geometry.location.lat());
+        console.log(place.geometry.location.lng());
+    //     $(".main-address").text(place.formatted_address);
+    //     var latitude  = place.geometry.location.lat();
+    //     var longitude = place.geometry.location.lng();
+    //     $("#cityLat").val(latitude);
+    //     $("#cityLng").val(longitude);
+    //     var units, deg;
+    // if($(".btn-on").hasClass('btn-danger')){
+    //   units = "ca";
+    //   deg = "&deg;C"; 
+    //  } else if ($(".btn-off").hasClass('btn-danger')) {
+    //   units = "us";
+    //   deg = "&deg;F";  
+    //  } 
+    //    getWeather(latitude, longitude, units, deg);	
+       
+    });
+  
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+
 });
