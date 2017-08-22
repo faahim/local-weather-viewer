@@ -27,7 +27,7 @@ $(document).ready(function() {
 			lon = ipData.longitude;
 			console.log(lat+" "+lon+"ip");
 			yourAddress();
-			getWearher();
+			getWeather();
 		});
 
 		if (navigator.geolocation) {
@@ -36,7 +36,7 @@ $(document).ready(function() {
 				lon = position.coords.longitude;
 				console.log(lat+" "+lon+"geo");
 				yourAddress();
-				getWearher();
+				getWeather();
 			});
 		}
 	}
@@ -49,7 +49,7 @@ $(document).ready(function() {
 		});
 	}
 
-	function getWearher() {
+	function getWeather() {
 		var weatherApiKey = "a3219d4e2772db6e34c6491e62144b27";
 		var weatherApiCall = "https://api.darksky.net/forecast/"+weatherApiKey+"/"+lat+","+lon+"?units=si";
 		$.ajax({
@@ -60,7 +60,7 @@ $(document).ready(function() {
 				$(".currentTemp").html(weatherData.currently.temperature);
 				$(".weatherCondition").html(weatherData.currently.summary);
 				$(".feelsLike").html(weatherData.currently.apparentTemperature + " °C");
-				$(".humidity").html(weatherData.currently.humidity * 100);
+				$(".humidity").html((weatherData.currently.humidity * 100).toFixed(0));
 				$(".windSpeed").html((weatherData.currently.windSpeed/0.6213).toFixed(2));
 				
 				$(".todaySummary").html(weatherData.hourly.summary);
@@ -91,8 +91,8 @@ $(document).ready(function() {
   				$(".weekDayName"+i).text(unixToWeekday(weatherData.daily.data[i].time));
   				$(".weekDaySummary"+i).text(weatherData.daily.data[i].summary);
   				$(".weekDayWind"+i).text((weatherData.daily.data[i].windSpeed/0.6213).toFixed(2));
-  				$(".weekDayHumid"+i).text(weatherData.daily.data[i].humidity*100);
-  				$(".weekDayCloud"+i).text(weatherData.daily.data[i].cloudCover*100);
+  				$(".weekDayHumid"+i).text((weatherData.daily.data[i].humidity*100).toFixed(0));
+  				$(".weekDayCloud"+i).text((weatherData.daily.data[i].cloudCover*100).toFixed(0));
   				skycons.set("weatherIcon"+i, weatherData.daily.data[i].icon);
   			}
 
@@ -192,41 +192,22 @@ $(document).ready(function() {
 		}
 	});
 
-	//Google location Search input Test
 
-	function initialize() {
-    
+	//Google location Search
+
+	function initialize() { 
     var input = document.getElementById('locSearchBox');
     var autocomplete = new google.maps.places.Autocomplete(input);
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
-        // $('.error').addClass('hidden');
-        // if($('.panel').hasClass('hidden')){
-        //   $('.panel').removeClass('hidden');
-        // }
-  
-        var place = autocomplete.getPlace();
-        console.log(place);
-        console.log(place.formatted_address);
-        console.log(place.geometry.location.lat());
-        console.log(place.geometry.location.lng());
-    //     $(".main-address").text(place.formatted_address);
-    //     var latitude  = place.geometry.location.lat();
-    //     var longitude = place.geometry.location.lng();
-    //     $("#cityLat").val(latitude);
-    //     $("#cityLng").val(longitude);
-    //     var units, deg;
-    // if($(".btn-on").hasClass('btn-danger')){
-    //   units = "ca";
-    //   deg = "&deg;C"; 
-    //  } else if ($(".btn-off").hasClass('btn-danger')) {
-    //   units = "us";
-    //   deg = "&deg;F";  
-    //  } 
-    //    getWeather(latitude, longitude, units, deg);	
-       
-    });
-  
-		}
-		google.maps.event.addDomListener(window, 'load', initialize);
-
+      var place = autocomplete.getPlace();
+      console.log(place);
+      console.log(place.formatted_address);
+      lat = place.geometry.location.lat();
+      lon = place.geometry.location.lng();
+      // yourAddress();
+      $(".locName").html(place.formatted_address);
+      getWeather();
+    	});
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
 });
