@@ -1,9 +1,26 @@
 body {
+  font-size: 1em;
   background-color: #E9E9E9;
   margin: 0; }
 
 .icon {
   font-size: 1.5em; }
+
+#searchBar {
+  padding: 20px 0; }
+  #searchBar #locSearchBox {
+    display: inline-block;
+    width: 100%;
+    font-size: 1em;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 15px 1px #bfa8bc;
+    transition: all 0.3s; }
+    #searchBar #locSearchBox:focus {
+      outline: none;
+      box-shadow: 5px 5px 30px 5px #bfa8bc; }
 
 #dailyForecast .tempBox {
   color: #fff;
@@ -153,5 +170,16 @@ body {
           font-size: 0.8em; }
           #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDayWindnHumidity p:last-child {
             margin-right: 0; }
+
+.pac-container {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 5px; }
+
+.pac-item, .pac-item-query {
+  text-align: center;
+  padding: 10px;
+  font-family: inherit;
+  font-size: inherit; }
 
 /*# sourceMappingURL=style.css.map */
