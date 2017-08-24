@@ -6,124 +6,126 @@ body {
 .icon {
   font-size: 1.5em; }
 
-#searchBar {
-  padding: 20px 0; }
-  #searchBar #locSearchBox {
-    display: inline-block;
-    width: 100%;
-    font-size: 1em;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0 15px 1px #bfa8bc;
-    transition: all 0.3s; }
-    #searchBar #locSearchBox:focus {
-      outline: none;
-      box-shadow: 5px 5px 30px 5px #bfa8bc; }
-
-#dailyForecast .tempBox {
-  color: #fff;
-  padding: 15px;
-  margin-top: 20px;
-  font-weight: bold;
-  border-radius: 8px;
-  background: linear-gradient(160deg, #FBCA88, #EF69AD, #B236D0);
-  box-shadow: 0 0 25px 3px #bfa8bc; }
-  #dailyForecast .tempBox .currentTemp {
-    font-size: 5em; }
-  #dailyForecast .tempBox .unit {
-    font-size: 3em; }
-  #dailyForecast .tempBox p.m0 {
-    margin: 0; }
-  #dailyForecast .tempBox .convertToggle .icon {
-    position: relative;
-    top: 4px; }
-  #dailyForecast .tempBox .weatherCondition {
-    font-size: 2.5em; }
-  #dailyForecast .tempBox .tempBoxSubInfo {
-    font-size: 0.8em;
-    padding: 20px 0 0; }
-    #dailyForecast .tempBox .tempBoxSubInfo p {
-      margin: 0; }
-#dailyForecast .dashboard {
-  margin-top: 20px;
-  border-radius: 8px; }
-  #dailyForecast .dashboard .dashboardDaily {
-    position: relative; }
-    #dailyForecast .dashboard .dashboardDaily .expect {
-      height: 300px;
-      padding: 20px;
-      background: linear-gradient(45deg, #30496B, #30B8D2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      color: #fff;
-      position: relative;
-      box-shadow: 0 0 25px 3px #bfa8bc; }
-      #dailyForecast .dashboard .dashboardDaily .expect #expectIcon {
-        position: absolute;
-        left: 102px;
-        top: 65px; }
-      #dailyForecast .dashboard .dashboardDaily .expect p {
-        position: relative;
-        top: 20px; }
-    #dailyForecast .dashboard .dashboardDaily .thin {
-      font-size: 0.8em;
-      font-weight: bold;
-      text-transform: uppercase; }
-    #dailyForecast .dashboard .dashboardDaily .tempMaxBox, #dailyForecast .dashboard .dashboardDaily .tempMinBox {
-      height: 150px;
-      border-radius: 50%;
-      position: relative;
-      color: #fff;
-      font-weight: bold;
-      font-size: 1.2em;
-      display: flex;
-      align-items: center;
-      z-index: 2;
-      box-shadow: 0 0 25px 3px #bfa8bc; }
-      #dailyForecast .dashboard .dashboardDaily .tempMaxBox p, #dailyForecast .dashboard .dashboardDaily .tempMinBox p {
-        display: inline-block; }
-    #dailyForecast .dashboard .dashboardDaily .tempMaxBox {
-      background: linear-gradient(45deg, #F32F8E, #B236D0);
-      left: 40px; }
-      #dailyForecast .dashboard .dashboardDaily .tempMaxBox p {
-        margin: 0 auto 40px; }
-    #dailyForecast .dashboard .dashboardDaily .tempMinBox {
-      background: linear-gradient(45deg, #833DB8, #B998DD);
-      top: 150px;
-      right: 40px; }
-      #dailyForecast .dashboard .dashboardDaily .tempMinBox p {
-        margin: 40px auto 0; }
-  #dailyForecast .dashboard .sunTimes {
-    margin-top: 5%;
+#dailyForecast {
+  display: flex;
+  vertical-align: middle; }
+  #dailyForecast .searchBar {
+    padding: 20px 0; }
+    #dailyForecast .searchBar #locSearchBox {
+      display: inline-block;
+      width: 100%;
+      font-size: 1em;
+      text-align: center;
+      border: none;
+      border-radius: 3px;
+      padding: 10px;
+      box-shadow: 0 0 15px 1px #bfa8bc;
+      transition: all 0.3s; }
+      #dailyForecast .searchBar #locSearchBox:focus {
+        outline: none;
+        box-shadow: 5px 5px 30px 5px #bfa8bc; }
+  #dailyForecast .tempBox {
+    color: #fff;
+    padding: 15px;
+    margin-top: 20px;
     font-weight: bold;
-    font-size: 0.8em; }
-  #dailyForecast .dashboard .weatherQuote {
-    margin-top: 5%;
-    font-size: 1em;
-    font-weight: bold; }
-  #dailyForecast .dashboard .weeklyButton {
-    margin-top: 5%; }
-    #dailyForecast .dashboard .weeklyButton a {
-      padding: 15px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #fff;
-      background-image: linear-gradient(220deg, #ec77ab, #7873f5);
-      box-shadow: 0 0 25px 3px #bfa8bc;
-      transition: 0.5s; }
-      #dailyForecast .dashboard .weeklyButton a:hover {
-        box-shadow: 5px 5px 25px 6px #bfa8bc; }
-      #dailyForecast .dashboard .weeklyButton a i {
-        font-size: 1.2em;
+    border-radius: 8px;
+    background: linear-gradient(160deg, #FBCA88, #EF69AD, #B236D0);
+    box-shadow: 0 0 25px 3px #bfa8bc; }
+    #dailyForecast .tempBox .currentTemp {
+      font-size: 5em; }
+    #dailyForecast .tempBox .unit {
+      font-size: 3em; }
+    #dailyForecast .tempBox p.m0 {
+      margin: 0; }
+    #dailyForecast .tempBox .convertToggle .icon {
+      position: relative;
+      top: 4px; }
+    #dailyForecast .tempBox .weatherCondition {
+      font-size: 3em; }
+    #dailyForecast .tempBox .tempBoxSubInfo {
+      font-size: 0.8em;
+      padding: 20px 0 0; }
+      #dailyForecast .tempBox .tempBoxSubInfo p {
+        margin: 0; }
+  #dailyForecast .dashboard {
+    margin-top: 20px;
+    border-radius: 8px; }
+    #dailyForecast .dashboard .dashboardDaily {
+      position: relative; }
+      #dailyForecast .dashboard .dashboardDaily .expect {
+        height: 300px;
+        padding: 20px;
+        background: linear-gradient(45deg, #30496B, #30B8D2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        color: #fff;
         position: relative;
-        top: 3px; }
+        box-shadow: 0 0 25px 3px #bfa8bc; }
+        #dailyForecast .dashboard .dashboardDaily .expect #expectIcon {
+          position: absolute;
+          left: 102px;
+          top: 65px; }
+        #dailyForecast .dashboard .dashboardDaily .expect p {
+          position: relative;
+          top: 20px; }
+      #dailyForecast .dashboard .dashboardDaily .thin {
+        font-size: 1em;
+        font-weight: bold;
+        text-transform: uppercase; }
+      #dailyForecast .dashboard .dashboardDaily .tempMaxBox, #dailyForecast .dashboard .dashboardDaily .tempMinBox {
+        height: 150px;
+        border-radius: 50%;
+        position: relative;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.2em;
+        display: flex;
+        align-items: center;
+        z-index: 2;
+        box-shadow: 0 0 25px 3px #bfa8bc; }
+        #dailyForecast .dashboard .dashboardDaily .tempMaxBox p, #dailyForecast .dashboard .dashboardDaily .tempMinBox p {
+          display: inline-block; }
+      #dailyForecast .dashboard .dashboardDaily .tempMaxBox {
+        background: linear-gradient(45deg, #F32F8E, #B236D0);
+        left: 40px; }
+        #dailyForecast .dashboard .dashboardDaily .tempMaxBox p {
+          margin: 0 auto 40px; }
+      #dailyForecast .dashboard .dashboardDaily .tempMinBox {
+        background: linear-gradient(45deg, #833DB8, #B998DD);
+        top: 150px;
+        right: 40px; }
+        #dailyForecast .dashboard .dashboardDaily .tempMinBox p {
+          margin: 40px auto 0; }
+    #dailyForecast .dashboard .sunTimes {
+      margin-top: 5%;
+      font-weight: bold;
+      font-size: 0.8em; }
+    #dailyForecast .dashboard .weatherQuote {
+      margin-top: 5%;
+      font-size: 1em;
+      font-weight: bold; }
+    #dailyForecast .dashboard .weeklyButton {
+      margin-top: 5%; }
+      #dailyForecast .dashboard .weeklyButton a {
+        padding: 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        color: #fff;
+        background-image: linear-gradient(220deg, #ec77ab, #7873f5);
+        box-shadow: 0 0 25px 3px #bfa8bc;
+        transition: 0.5s; }
+        #dailyForecast .dashboard .weeklyButton a:hover {
+          box-shadow: 5px 5px 25px 6px #bfa8bc; }
+        #dailyForecast .dashboard .weeklyButton a i {
+          font-size: 1.2em;
+          position: relative;
+          top: 3px; }
 
 #weeklyForecast {
-  padding: 100px 0; }
+  padding: 20px 0 30px; }
   #weeklyForecast h3 {
     line-height: 50px; }
   #weeklyForecast .weekRows {
@@ -181,5 +183,43 @@ body {
   padding: 10px;
   font-family: inherit;
   font-size: inherit; }
+
+@media (min-height: 768px) {
+  #dailyForecast {
+    height: 100vh; } }
+@media (max-width: 959px) {
+  #weeklyForecast .weekRows {
+    margin: 0; }
+    #weeklyForecast .weekRows .dayCard {
+      margin-bottom: 50px; } }
+/*************Animated Heart at the bottom*************/
+.heartbeat {
+  color: #e80d2e;
+  animation: heartbeat 3s infinite; }
+
+.love {
+  width: 20%;
+  margin: 0 auto;
+  padding: 5px 0;
+  text-align: center; }
+
+.love > a {
+  top: 0;
+  text-decoration: none; }
+
+/*Beating heart animation keyframe*/
+@keyframes heartbeat {
+  0% {
+    transform: scale(1); }
+  5% {
+    transform: scale(1.3); }
+  10% {
+    transform: scale(1.1); }
+  20% {
+    transform: scale(1.5); }
+  30% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1); } }
 
 /*# sourceMappingURL=style.css.map */

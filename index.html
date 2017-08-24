@@ -11,19 +11,18 @@
 
 <body>
 
-<section id="searchBar" class="container">
-	<div class="row justify-content-center">
-		<div class="col-8">
-			<input type="text" name="locSearchBox" id="locSearchBox">
-		</div>
-	</div>
-</section>
-
 	<section id="dailyForecast">
 		<div class="container">
+
+			<div class="row justify-content-center searchBar">
+				<div class="col-10 col-lg-8">
+					<input type="text" name="locSearchBox" id="locSearchBox">
+				</div>
+			</div>
+
 			<div class="row justify-content-around">
 
-				<div class="col-5 tempBox text-center">
+				<div class="col-10 col-lg-5 tempBox text-center">
 					<i class="icon ion-location"></i>
 					<p><span class="locName">Your Location Here</span></p>
 					<canvas id="weatherIcon" width="100" height="100"></canvas>
@@ -45,7 +44,7 @@
 					</div>
 				</div>
 
-				<div class="col-6 dashboard text-center">
+				<div class="col-10 col-sm-12 col-md-10 col-lg-7 col-xl-6 dashboard text-center">
 
 					<div class="row justify-content-center dashboardDaily">
 						<div class="col-3 tempMaxBox">
@@ -53,7 +52,7 @@
 								<span class="tempMax text-left"></span>
 							</p>
 						</div>
-						<div class="col-6 expect">
+						<div class="col-6 expect text-center">
 							<canvas id="expectIcon" width="80" height="80"></canvas> <br>
 							<p class="text-center thin">Expect <span class="todaySummary">...</span></p>
 						</div>
@@ -80,12 +79,14 @@
 					</div>
 
 					<div class="row weatherQuote text-center">
-						<p class="quote">"There is no such thing as bad weather, only different kinds of good weather." -John Ruskin</p>
+						<div class="col">
+							<p class="quote">"There is no such thing as bad weather, only different kinds of good weather." -John Ruskin</p>
+						</div>
 					</div>
 
 					<div class="row justify-content-center weeklyButton">
 						<div class="col-5">
-							<a href="#">Weekly Forecast <i class="icon ion-ios-arrow-down"></i></a>
+							<a href="#weeklyForecast">Weekly Forecast <i class="icon ion-ios-arrow-down"></i></a>
 						</div>
 					</div>
 
@@ -95,240 +96,246 @@
 		</div>
 	</section>
 
-	<section id="weeklyForecast" class="container">
-		<div class="row">
-			<div class="col text-center">
-				<h3>Next Six Days: <span class="weekDaysSummary"></span></h3>
+	<section id="weeklyForecast">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-10 text-center">
+					<h3>Next Six Days: <span class="weekDaysSummary"></span></h3>
+				</div>
+			</div>
+
+			<div class="row justify-content-around weekRows">
+				<div class="col-10 col-lg-5 dayCard text-center">
+					<div class="row">
+						<div class="col-5 dayIconHighlight">
+							<canvas id="weatherIcon1" width="100" height="100"></canvas>
+							<div class="dayMaxMin">
+								<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax1"></span>°C</p>
+								<p><span class="weekDayTempMin1"></span>°C<i class="icon ion-arrow-graph-down-right"></i></p>
+							</div>
+						</div>
+						<div class="col-7 dayInfoHighlight">
+							<div class="row">
+								<div class="col-12 weekDay">
+									<p class="weekDayName1">Day</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySummary">
+									<p class="weekDaySummary1">Days Info</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySun">
+									<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise1"></span> AM</p>
+									<p><i class="wi wi-sunset"></i> <span class="weekDaySunset1"></span> PM</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col weekDayWindnHumidity">
+									<p><i class="wi wi-windy"></i> <span class="weekDayWind1"></span> km/s</p>
+									<p><i class="wi wi-humidity"></i> <span class="weekDayHumid1"></span>%</p>
+									<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud1"></span>%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-10 col-lg-5 dayCard text-center">
+					<div class="row">
+						<div class="col-5 dayIconHighlight">
+							<canvas id="weatherIcon2" width="100" height="100"></canvas>
+							<div class="dayMaxMin">
+								<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax2"></span>°C</p>
+								<p><span class="weekDayTempMin2"></span>°C<i class="icon ion-arrow-graph-down-right"></i></p>
+							</div>
+						</div>
+						<div class="col-7 dayInfoHighlight">
+							<div class="row">
+								<div class="col-12 weekDay">
+									<p class="weekDayName2">Day</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySummary">
+									<p class="weekDaySummary2">Days Info</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySun">
+									<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise2"></span> AM</p>
+									<p><i class="wi wi-sunset"></i> <span class="weekDaySunset2"></span> PM</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col weekDayWindnHumidity">
+									<p><i class="wi wi-windy"></i> <span class="weekDayWind2"></span> km/s</p>
+									<p><i class="wi wi-humidity"></i> <span class="weekDayHumid2"></span>%</p>
+									<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud2"></span>%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-around weekRows">
+				<div class="col-10 col-lg-5 dayCard text-center">
+					<div class="row">
+						<div class="col-5 dayIconHighlight">
+							<canvas id="weatherIcon3" width="100" height="100"></canvas>
+							<div class="dayMaxMin">
+								<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax3"></span>°C</p>
+								<p><span class="weekDayTempMin3"></span>°C<i class="icon ion-arrow-graph-down-right"></i></p>
+							</div>
+						</div>
+						<div class="col-7 dayInfoHighlight">
+							<div class="row">
+								<div class="col-12 weekDay">
+									<p class="weekDayName3">Day</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySummary">
+									<p class="weekDaySummary3">Days Info</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySun">
+									<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise3"></span> AM</p>
+									<p><i class="wi wi-sunset"></i> <span class="weekDaySunset3"></span> PM</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col weekDayWindnHumidity">
+									<p><i class="wi wi-windy"></i> <span class="weekDayWind3"></span> km/s</p>
+									<p><i class="wi wi-humidity"></i> <span class="weekDayHumid3"></span>%</p>
+									<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud3"></span>%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-10 col-lg-5 dayCard text-center">
+					<div class="row">
+						<div class="col-5 dayIconHighlight">
+							<canvas id="weatherIcon4" width="100" height="100"></canvas>
+							<div class="dayMaxMin">
+								<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax4"></span>°C</p>
+								<p><span class="weekDayTempMax4"></span>°C<i class="icon ion-arrow-graph-down-right"></i></p>
+							</div>
+						</div>
+						<div class="col-7 dayInfoHighlight">
+							<div class="row">
+								<div class="col-12 weekDay">
+									<p class="weekDayName4">Day</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySummary">
+									<p class="weekDaySummary4">Days Info</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySun">
+									<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise4"></span> AM</p>
+									<p><i class="wi wi-sunset"></i> <span class="weekDaySunset4"></span> PM</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col weekDayWindnHumidity">
+									<p><i class="wi wi-windy"></i> <span class="weekDayWind4"></span> km/s</p>
+									<p><i class="wi wi-humidity"></i> <span class="weekDayHumid4"></span>%</p>
+									<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud4"></span>%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-around weekRows">
+				<div class="col-10 col-lg-5 dayCard text-center">
+					<div class="row">
+						<div class="col-5 dayIconHighlight">
+							<canvas id="weatherIcon5" width="100" height="100"></canvas>
+							<div class="dayMaxMin">
+								<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax5"></span>°C</p>
+								<p><span class="weekDayTempMax5"></span>°C<i class="icon ion-arrow-graph-down-right"></i></p>
+							</div>
+						</div>
+						<div class="col-7 dayInfoHighlight">
+							<div class="row">
+								<div class="col-12 weekDay">
+									<p class="weekDayName5">Day</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySummary">
+									<p class="weekDaySummary5">Days Info</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySun">
+									<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise5"></span> AM</p>
+									<p><i class="wi wi-sunset"></i> <span class="weekDaySunset5"></span> PM</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col weekDayWindnHumidity">
+									<p><i class="wi wi-windy"></i> <span class="weekDayWind5"></span> km/s</p>
+									<p><i class="wi wi-humidity"></i> <span class="weekDayHumid5"></span>%</p>
+									<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud5"></span>%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-10 col-lg-5 dayCard text-center">
+					<div class="row">
+						<div class="col-5 dayIconHighlight">
+							<canvas id="weatherIcon6" width="100" height="100"></canvas>
+							<div class="dayMaxMin">
+								<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax6"></span>°C</p>
+								<p><span class="weekDayTempMax6"></span>°C<i class="icon ion-arrow-graph-down-right"></i></p>
+							</div>
+						</div>
+						<div class="col-7 dayInfoHighlight">
+							<div class="row">
+								<div class="col-12 weekDay">
+									<p class="weekDayName6">Day</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySummary">
+									<p class="weekDaySummary6">Days Info</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySun">
+									<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise6"></span> AM</p>
+									<p><i class="wi wi-sunset"></i> <span class="weekDaySunset6"></span> PM</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col weekDayWindnHumidity">
+									<p><i class="wi wi-windy"></i> <span class="weekDayWind6"></span> km/s</p>
+									<p><i class="wi wi-humidity"></i> <span class="weekDayHumid6"></span>%</p>
+									<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud6"></span>%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+	</section>
 
-		<div class="row justify-content-around weekRows">
-			<div class="col-5 dayCard text-center">
-				<div class="row">
-					<div class="col-5 dayIconHighlight">
-						<canvas id="weatherIcon1" width="100" height="100"></canvas>
-						<div class="dayMaxMin">
-							<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax1"></span>°C</p>
-							<p><span class="weekDayTempMin1"></span>°C<i class="icon ion-arrow-graph-down-right"></i></p>
-						</div>
-					</div>
-					<div class="col-7 dayInfoHighlight">
-						<div class="row">
-							<div class="col-12 weekDay">
-								<p class="weekDayName1">Day</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 weekDaySummary">
-								<p class="weekDaySummary1">Days Info</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 weekDaySun">
-								<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise1"></span> AM</p>
-								<p><i class="wi wi-sunset"></i> <span class="weekDaySunset1"></span> PM</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col weekDayWindnHumidity">
-								<p><i class="wi wi-windy"></i> <span class="weekDayWind1"></span> km/s</p>
-								<p><i class="wi wi-humidity"></i> <span class="weekDayHumid1"></span>%</p>
-								<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud1"></span>%</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-5 dayCard text-center">
-				<div class="row">
-					<div class="col-5 dayIconHighlight">
-						<canvas id="weatherIcon2" width="100" height="100"></canvas>
-						<div class="dayMaxMin">
-							<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax2"></span>°C</p>
-							<p><span class="weekDayTempMin2"></span>°C<i class="icon ion-arrow-graph-down-right"></i></p>
-						</div>
-					</div>
-					<div class="col-7 dayInfoHighlight">
-						<div class="row">
-							<div class="col-12 weekDay">
-								<p class="weekDayName2">Day</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 weekDaySummary">
-								<p class="weekDaySummary2">Days Info</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 weekDaySun">
-								<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise2"></span> AM</p>
-								<p><i class="wi wi-sunset"></i> <span class="weekDaySunset2"></span> PM</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col weekDayWindnHumidity">
-								<p><i class="wi wi-windy"></i> <span class="weekDayWind2"></span> km/s</p>
-								<p><i class="wi wi-humidity"></i> <span class="weekDayHumid2"></span>%</p>
-								<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud2"></span>%</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row justify-content-around weekRows">
-			<div class="col-5 dayCard text-center">
-				<div class="row">
-					<div class="col-5 dayIconHighlight">
-						<canvas id="weatherIcon3" width="100" height="100"></canvas>
-						<div class="dayMaxMin">
-							<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax3"></span>°C</p>
-							<p><span class="weekDayTempMin3"></span>°C<i class="icon ion-arrow-graph-down-right"></i></p>
-						</div>
-					</div>
-					<div class="col-7 dayInfoHighlight">
-						<div class="row">
-							<div class="col-12 weekDay">
-								<p class="weekDayName3">Day</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 weekDaySummary">
-								<p class="weekDaySummary3">Days Info</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 weekDaySun">
-								<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise3"></span> AM</p>
-								<p><i class="wi wi-sunset"></i> <span class="weekDaySunset3"></span> PM</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col weekDayWindnHumidity">
-								<p><i class="wi wi-windy"></i> <span class="weekDayWind3"></span> km/s</p>
-								<p><i class="wi wi-humidity"></i> <span class="weekDayHumid3"></span>%</p>
-								<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud3"></span>%</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-5 dayCard text-center">
-				<div class="row">
-					<div class="col-5 dayIconHighlight">
-						<canvas id="weatherIcon4" width="100" height="100"></canvas>
-						<div class="dayMaxMin">
-							<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax4"></span>°C</p>
-							<p><span class="weekDayTempMax4"></span>°C<i class="icon ion-arrow-graph-down-right"></i></p>
-						</div>
-					</div>
-					<div class="col-7 dayInfoHighlight">
-						<div class="row">
-							<div class="col-12 weekDay">
-								<p class="weekDayName4">Day</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 weekDaySummary">
-								<p class="weekDaySummary4">Days Info</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 weekDaySun">
-								<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise4"></span> AM</p>
-								<p><i class="wi wi-sunset"></i> <span class="weekDaySunset4"></span> PM</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col weekDayWindnHumidity">
-								<p><i class="wi wi-windy"></i> <span class="weekDayWind4"></span> km/s</p>
-								<p><i class="wi wi-humidity"></i> <span class="weekDayHumid4"></span>%</p>
-								<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud4"></span>%</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row justify-content-around weekRows">
-			<div class="col-5 dayCard text-center">
-				<div class="row">
-					<div class="col-5 dayIconHighlight">
-						<canvas id="weatherIcon5" width="100" height="100"></canvas>
-						<div class="dayMaxMin">
-							<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax5"></span>°C</p>
-							<p><span class="weekDayTempMax5"></span>°C<i class="icon ion-arrow-graph-down-right"></i></p>
-						</div>
-					</div>
-					<div class="col-7 dayInfoHighlight">
-						<div class="row">
-							<div class="col-12 weekDay">
-								<p class="weekDayName5">Day</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 weekDaySummary">
-								<p class="weekDaySummary5">Days Info</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 weekDaySun">
-								<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise5"></span> AM</p>
-								<p><i class="wi wi-sunset"></i> <span class="weekDaySunset5"></span> PM</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col weekDayWindnHumidity">
-								<p><i class="wi wi-windy"></i> <span class="weekDayWind5"></span> km/s</p>
-								<p><i class="wi wi-humidity"></i> <span class="weekDayHumid5"></span>%</p>
-								<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud5"></span>%</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-5 dayCard text-center">
-				<div class="row">
-					<div class="col-5 dayIconHighlight">
-						<canvas id="weatherIcon6" width="100" height="100"></canvas>
-						<div class="dayMaxMin">
-							<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax6"></span>°C</p>
-							<p><span class="weekDayTempMax6"></span>°C<i class="icon ion-arrow-graph-down-right"></i></p>
-						</div>
-					</div>
-					<div class="col-7 dayInfoHighlight">
-						<div class="row">
-							<div class="col-12 weekDay">
-								<p class="weekDayName6">Day</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 weekDaySummary">
-								<p class="weekDaySummary6">Days Info</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 weekDaySun">
-								<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise6"></span> AM</p>
-								<p><i class="wi wi-sunset"></i> <span class="weekDaySunset6"></span> PM</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col weekDayWindnHumidity">
-								<p><i class="wi wi-windy"></i> <span class="weekDayWind6"></span> km/s</p>
-								<p><i class="wi wi-humidity"></i> <span class="weekDayHumid6"></span>%</p>
-								<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud6"></span>%</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	<section>
+		<p class="love">Powered by DarkSkies. Made with <i class="icon ion-heart heartbeat"></i> by <a href="https://twitter.com/AfiurRahman" target="_blank">Fahim</a></p>
 	</section>
 	
 	<!-- Scripts -->
