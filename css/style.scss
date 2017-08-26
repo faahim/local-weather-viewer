@@ -265,6 +265,93 @@ body {
 	}
 }
 
+@media (max-width: 321px) {
+	#dailyForecast {
+		.tempBox {
+			margin-bottom: 50px;
+			.currentTemp {
+				font-size: 3em;
+			}
+			.unit {
+				font-size: 1.5em;
+			}
+			.weatherCondition {
+				font-size: 2em;
+			}
+			.feels {
+				font-size: 0.8em;
+			}
+			.tempBoxSubInfo {
+				font-size: 0.7em;
+			}
+		}
+		.dashboard {
+			.dashboardDaily {
+				.expect {
+					height: 150px;
+					font-size: 0.7em;
+					#expectIcon {
+						display: none;
+					}
+				}
+				.tempMaxBox, .tempMinBox {
+					height: 70px;
+					font-size: 0.7em;
+				}
+				.tempMaxBox > p {
+					margin: 0;
+				}
+				.tempMinBox{
+					top: 100px;
+					p{
+						margin: 0;
+					}
+				}
+			}
+			.sunTimes {
+				margin-top: 50px;
+				p {
+					// font-size: 0.8em;
+					i {
+						display: block;
+					}
+				}
+			}
+			.weeklyButton {
+				margin: 40px 0;
+			}
+		}
+	}
+	#weeklyForecast {
+		h3 {
+			font-size: 1em;
+			line-height: 25px;
+			margin-bottom: 50px;
+		}
+		.weekRows {
+			.dayCard {
+				.dayIconHighlight {
+					canvas {
+						position: relative;
+						right: 10px;
+					}
+					.dayMaxMin > p {
+						position: static;
+					}
+				}
+				.dayInfoHighlight {
+					.weekDaySummary {
+						height: auto;
+					}
+					.weekDaySun > {
+						position: static;
+					}
+				}
+			}
+		}
+	}
+}
+
 @media (max-width: 959px) {
 	#weeklyForecast {
 		.weekRows {

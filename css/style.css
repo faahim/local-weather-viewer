@@ -187,6 +187,53 @@ body {
 @media (min-height: 768px) {
   #dailyForecast {
     height: 100vh; } }
+@media (max-width: 321px) {
+  #dailyForecast .tempBox {
+    margin-bottom: 50px; }
+    #dailyForecast .tempBox .currentTemp {
+      font-size: 3em; }
+    #dailyForecast .tempBox .unit {
+      font-size: 1.5em; }
+    #dailyForecast .tempBox .weatherCondition {
+      font-size: 2em; }
+    #dailyForecast .tempBox .feels {
+      font-size: 0.8em; }
+    #dailyForecast .tempBox .tempBoxSubInfo {
+      font-size: 0.7em; }
+  #dailyForecast .dashboard .dashboardDaily .expect {
+    height: 150px;
+    font-size: 0.7em; }
+    #dailyForecast .dashboard .dashboardDaily .expect #expectIcon {
+      display: none; }
+  #dailyForecast .dashboard .dashboardDaily .tempMaxBox, #dailyForecast .dashboard .dashboardDaily .tempMinBox {
+    height: 70px;
+    font-size: 0.7em; }
+  #dailyForecast .dashboard .dashboardDaily .tempMaxBox > p {
+    margin: 0; }
+  #dailyForecast .dashboard .dashboardDaily .tempMinBox {
+    top: 100px; }
+    #dailyForecast .dashboard .dashboardDaily .tempMinBox p {
+      margin: 0; }
+  #dailyForecast .dashboard .sunTimes {
+    margin-top: 50px; }
+    #dailyForecast .dashboard .sunTimes p i {
+      display: block; }
+  #dailyForecast .dashboard .weeklyButton {
+    margin: 40px 0; }
+
+  #weeklyForecast h3 {
+    font-size: 1em;
+    line-height: 25px;
+    margin-bottom: 50px; }
+  #weeklyForecast .weekRows .dayCard .dayIconHighlight canvas {
+    position: relative;
+    right: 10px; }
+  #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin > p {
+    position: static; }
+  #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySummary {
+    height: auto; }
+  #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySun > {
+    position: static; } }
 @media (max-width: 959px) {
   #weeklyForecast .weekRows {
     margin: 0; }
