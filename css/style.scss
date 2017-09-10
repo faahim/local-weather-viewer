@@ -87,7 +87,7 @@ body {
 				#expectIcon {
 			    position: absolute;
 			    left: 102px;
-			    top: 65px;
+			    top: 35px;
 				}
 				p {
 					position: relative;
@@ -171,6 +171,7 @@ body {
 	padding: 20px 0 30px;
 	h3 {
 		line-height: 50px;
+		margin: 80px 0 30px;
 	}
 	.weekRows {
 		margin: 50px 0;
@@ -191,7 +192,7 @@ body {
 					p{
 						position: absolute;
 						&:first-child {
-							left: 0
+							left: 0;
 						}
 						&:last-child {
 							right: 0;
@@ -214,6 +215,7 @@ body {
 				}
 				.weekDaySummary {
 					height: 50px;
+					margin-bottom: 20px;
 					p {
 						margin: 0;
 					}
@@ -265,7 +267,113 @@ body {
 	}
 }
 
-@media (max-width: 321px) {
+@media (max-width: 1199px) {
+	#dailyForecast {
+		.dashboard {
+			.dashboardDaily {
+				margin-top: 50px;
+				.tempMaxBox > p {
+					position: relative;
+					top: 15px;
+				}
+				.tempMinBox{
+					p{
+						position: relative;
+						bottom: 10px;
+					}
+				}
+			}
+			.sunTimes {
+				margin-top: 50px;
+				p {
+					i {
+						display: block;
+					}
+				}
+			}
+			.weeklyButton {
+				margin: 40px 0;
+			}
+		}
+	}
+	#weeklyForecast {
+		h3 {
+			margin: 50px 0;
+		}
+		.weekRows {
+			margin: 0;
+			.dayCard {
+				margin-bottom: 50px;
+				.dayIconHighlight {
+					.dayMaxMin {
+						p {
+							position: relative;
+						}
+					}
+				}
+				.dayInfoHighlight {
+					.weekDaySummary {
+						margin-bottom: 40px;
+					}
+					.weekDaySun {
+						p {
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 961px) {
+	#weeklyForecast {
+		.weekRows {
+			margin: 0;
+			.dayCard {
+				.dayIconHighlight {
+					.dayMaxMin {
+						p {
+							position: absolute;
+							&:first-child {
+								left: 5px;
+							}
+							&:last-child {
+								right: 5px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	#weeklyForecast {
+		.weekRows {
+			margin: 0;
+			.dayCard {
+				.dayIconHighlight {
+					.dayMaxMin {
+						p {
+							position: relative;
+							display: block;
+							&:first-child {
+								left: 0;
+							}
+							&:last-child {
+								right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 415px) {
 	#dailyForecast {
 		.tempBox {
 			margin-bottom: 50px;
@@ -287,39 +395,33 @@ body {
 		}
 		.dashboard {
 			.dashboardDaily {
+				margin-top: 20px;
 				.expect {
-					height: 180px;
-					font-size: 0.7em;
+					height: 195px;
+					font-size: 0.8em;
 					#expectIcon {
-						display: none;
+						width: 60px;
+						height: 60px;
+						left: 35%;
+						top: 10%;
 					}
 				}
 				.tempMaxBox, .tempMinBox {
-					height: 80px;
-					font-size: 0.7em;
+					height: 95px;
+					font-size: 0.8em;
 					position: relative;
-				}
-				.tempMaxBox > p {
-					margin: 0;
 				}
 				.tempMaxBox {
 					top: -25px;
 				}
 				.tempMinBox{
 					top: 130px;
-					// left: 5px;
-					p{
-						margin: 0;
-					}
 				}
 			}
 			.sunTimes {
 				margin-top: 50px;
 				p {
 					font-size: 0.9em;
-					i {
-						display: block;
-					}
 				}
 			}
 			.weeklyButton {
@@ -335,18 +437,24 @@ body {
 		}
 		.weekRows {
 			.dayCard {
+				width: 100%;
 				.dayIconHighlight {
-					canvas {
-						position: relative;
-						right: 10px;
-					}
 					.dayMaxMin > p {
 						position: static;
 					}
 				}
 				.dayInfoHighlight {
+					.weekDay {
+						p {
+							font-size: 1.2em;
+						}
+					}
 					.weekDaySummary {
 						height: auto;
+						margin-bottom: 10px;
+						p {
+							margin: 10px 0;
+						}
 					}
 					.weekDaySun > {
 						position: static;
@@ -363,15 +471,43 @@ body {
 			}
 		}
 	}
+	#footer {
+		p {
+			width: 50%;
+		}
+	}
 }
 
-@media (max-width: 959px) {
-	#weeklyForecast {
-		.weekRows {
-			margin: 0;
-			.dayCard {
-				margin-bottom: 50px;
+@media (max-width: 321px) {
+	#dailyForecast {
+		.dashboard {
+			.dashboardDaily {
+				.expect {
+					height: 180px;
+					font-size: 0.7em;
+					#expectIcon {
+						display: none;
+					}
+				}
+				.tempMaxBox, .tempMinBox {
+					height: 80px;
+					font-size: 0.7em;
+					position: relative;
+				}
 			}
+		}
+	}
+	#weeklyForecast {
+		.dayIconHighlight {
+			canvas {
+				position: relative;
+				right: 10px;
+			}
+		}
+	}
+	#footer {
+		p {
+			width: 50%;
 		}
 	}
 }

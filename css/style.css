@@ -66,7 +66,7 @@ body {
         #dailyForecast .dashboard .dashboardDaily .expect #expectIcon {
           position: absolute;
           left: 102px;
-          top: 65px; }
+          top: 35px; }
         #dailyForecast .dashboard .dashboardDaily .expect p {
           position: relative;
           top: 20px; }
@@ -127,7 +127,8 @@ body {
 #weeklyForecast {
   padding: 20px 0 30px; }
   #weeklyForecast h3 {
-    line-height: 50px; }
+    line-height: 50px;
+    margin: 80px 0 30px; }
   #weeklyForecast .weekRows {
     margin: 50px 0; }
     #weeklyForecast .weekRows .dayCard {
@@ -158,7 +159,8 @@ body {
           font-size: 1.5em;
           font-weight: bold; }
         #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySummary {
-          height: 50px; }
+          height: 50px;
+          margin-bottom: 20px; }
           #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySummary p {
             margin: 0; }
         #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySun p {
@@ -187,7 +189,54 @@ body {
 @media (min-height: 768px) {
   #dailyForecast {
     height: 100vh; } }
-@media (max-width: 321px) {
+@media (max-width: 1199px) {
+  #dailyForecast .dashboard .dashboardDaily {
+    margin-top: 50px; }
+    #dailyForecast .dashboard .dashboardDaily .tempMaxBox > p {
+      position: relative;
+      top: 15px; }
+    #dailyForecast .dashboard .dashboardDaily .tempMinBox p {
+      position: relative;
+      bottom: 10px; }
+  #dailyForecast .dashboard .sunTimes {
+    margin-top: 50px; }
+    #dailyForecast .dashboard .sunTimes p i {
+      display: block; }
+  #dailyForecast .dashboard .weeklyButton {
+    margin: 40px 0; }
+
+  #weeklyForecast h3 {
+    margin: 50px 0; }
+  #weeklyForecast .weekRows {
+    margin: 0; }
+    #weeklyForecast .weekRows .dayCard {
+      margin-bottom: 50px; }
+      #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin p {
+        position: relative; }
+      #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySummary {
+        margin-bottom: 40px; }
+      #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySun p {
+        margin: 0; } }
+@media (max-width: 961px) {
+  #weeklyForecast .weekRows {
+    margin: 0; }
+    #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin p {
+      position: absolute; }
+      #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin p:first-child {
+        left: 5px; }
+      #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin p:last-child {
+        right: 5px; } }
+@media (max-width: 767px) {
+  #weeklyForecast .weekRows {
+    margin: 0; }
+    #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin p {
+      position: relative;
+      display: block; }
+      #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin p:first-child {
+        left: 0; }
+      #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin p:last-child {
+        right: 0; } }
+@media (max-width: 415px) {
   #dailyForecast .tempBox {
     margin-bottom: 50px; }
     #dailyForecast .tempBox .currentTemp {
@@ -200,6 +249,58 @@ body {
       font-size: 0.8em; }
     #dailyForecast .tempBox .tempBoxSubInfo {
       font-size: 0.7em; }
+  #dailyForecast .dashboard .dashboardDaily {
+    margin-top: 20px; }
+    #dailyForecast .dashboard .dashboardDaily .expect {
+      height: 195px;
+      font-size: 0.8em; }
+      #dailyForecast .dashboard .dashboardDaily .expect #expectIcon {
+        width: 60px;
+        height: 60px;
+        left: 35%;
+        top: 10%; }
+    #dailyForecast .dashboard .dashboardDaily .tempMaxBox, #dailyForecast .dashboard .dashboardDaily .tempMinBox {
+      height: 95px;
+      font-size: 0.8em;
+      position: relative; }
+    #dailyForecast .dashboard .dashboardDaily .tempMaxBox {
+      top: -25px; }
+    #dailyForecast .dashboard .dashboardDaily .tempMinBox {
+      top: 130px; }
+  #dailyForecast .dashboard .sunTimes {
+    margin-top: 50px; }
+    #dailyForecast .dashboard .sunTimes p {
+      font-size: 0.9em; }
+  #dailyForecast .dashboard .weeklyButton {
+    margin: 40px 0; }
+
+  #weeklyForecast h3 {
+    font-size: 1em;
+    line-height: 25px;
+    margin-bottom: 50px; }
+  #weeklyForecast .weekRows .dayCard {
+    width: 100%; }
+    #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin > p {
+      position: static; }
+    #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDay p {
+      font-size: 1.2em; }
+    #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySummary {
+      height: auto;
+      margin-bottom: 10px; }
+      #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySummary p {
+        margin: 10px 0; }
+    #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySun > {
+      position: static;
+      margin: 20px auto; }
+      #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySun > p {
+        margin: 0;
+        text-align: center; }
+        #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySun > p:last-child {
+          margin: 0; }
+
+  #footer p {
+    width: 50%; } }
+@media (max-width: 321px) {
   #dailyForecast .dashboard .dashboardDaily .expect {
     height: 180px;
     font-size: 0.7em; }
@@ -209,47 +310,13 @@ body {
     height: 80px;
     font-size: 0.7em;
     position: relative; }
-  #dailyForecast .dashboard .dashboardDaily .tempMaxBox > p {
-    margin: 0; }
-  #dailyForecast .dashboard .dashboardDaily .tempMaxBox {
-    top: -25px; }
-  #dailyForecast .dashboard .dashboardDaily .tempMinBox {
-    top: 130px; }
-    #dailyForecast .dashboard .dashboardDaily .tempMinBox p {
-      margin: 0; }
-  #dailyForecast .dashboard .sunTimes {
-    margin-top: 50px; }
-    #dailyForecast .dashboard .sunTimes p {
-      font-size: 0.9em; }
-      #dailyForecast .dashboard .sunTimes p i {
-        display: block; }
-  #dailyForecast .dashboard .weeklyButton {
-    margin: 40px 0; }
 
-  #weeklyForecast h3 {
-    font-size: 1em;
-    line-height: 25px;
-    margin-bottom: 50px; }
-  #weeklyForecast .weekRows .dayCard .dayIconHighlight canvas {
+  #weeklyForecast .dayIconHighlight canvas {
     position: relative;
     right: 10px; }
-  #weeklyForecast .weekRows .dayCard .dayIconHighlight .dayMaxMin > p {
-    position: static; }
-  #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySummary {
-    height: auto; }
-  #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySun > {
-    position: static;
-    margin: 20px auto; }
-    #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySun > p {
-      margin: 0;
-      text-align: center; }
-      #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDaySun > p:last-child {
-        margin: 0; } }
-@media (max-width: 959px) {
-  #weeklyForecast .weekRows {
-    margin: 0; }
-    #weeklyForecast .weekRows .dayCard {
-      margin-bottom: 50px; } }
+
+  #footer p {
+    width: 50%; } }
 .heartbeat {
   color: #e80d2e;
   font-size: 16px; }
