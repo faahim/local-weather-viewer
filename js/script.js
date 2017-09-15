@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+	//Variables for working with Location, Temprature and Times
 	var lat;
 	var lon;
 	var tempInF;
@@ -20,36 +22,42 @@ $(document).ready(function() {
 	};
 
 	function locateYou() {
-
+		//Try to get users location using their IP adress automattically.
+		//It's not very precise but It's a way to get users location even if
+		//their browser doesn't support Geolocation or if they refuse to share it.
 		var ipApiCall = "https://ipapi.co/json";
 		$.getJSON(ipApiCall, function(ipData){
 			lat = ipData.latitude;
 			lon = ipData.longitude;
-			console.log(lat+" "+lon+"ip");
+			//console.log(lat+" "+lon+"ip"); (For Debugginh)
 			yourAddress();
 			getWeather();
 		});
 
+		//Try to get location from users browser (device).
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function (position) {
 				lat = position.coords.latitude;
 				lon = position.coords.longitude;
-				console.log(lat+" "+lon+"geo");
+				// console.log(lat+" "+lon+"geo"); (For Debugging)
 				yourAddress();
 				getWeather();
 			});
 		}
 	}
 
+	//After collecting the Latiture and Longitute, Getting their formatted address from Google Maps.
 	function yourAddress() {
 		var googleApiCall = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lon;
 		$.getJSON(googleApiCall, function(locationName){
 			$(".locName").html(locationName.results[2].formatted_address);
-			console.log(locationName.results[2].formatted_address);
+			// console.log(locationName.results[2].formatted_address); (For checking the precision)
 		});
 	}
 
 	function getWeather() {
+		//Looking up the weather from Darkskies using users latitude and longitude.
+		//Please don't use this API key. Get your own from DarkSkies.
 		var weatherApiKey = "a3219d4e2772db6e34c6491e62144b27";
 		var weatherApiCall = "https://api.darksky.net/forecast/"+weatherApiKey+"/"+lat+","+lon+"?units=si";
 		$.ajax({
@@ -57,6 +65,7 @@ $(document).ready(function() {
 			type: "GET",
 			dataType: "jsonp",
 			success: function(weatherData) {
+				//Fetching all the infor from the JSON file and plugging it into UI
 				$(".currentTemp").html(weatherData.currently.temperature);
 				$(".weatherCondition").html(weatherData.currently.summary);
 				$(".feelsLike").html(weatherData.currently.apparentTemperature + " °C");
@@ -101,13 +110,13 @@ $(document).ready(function() {
   			skycons.set("expectIcon", weatherData.hourly.icon);
   			skycons.play();
 
+  			//Coverting data between Celcius and Farenheight
   			tempInF = ((weatherData.currently.temperature*9/5) + 32).toFixed(2);
   			tempInC = weatherData.currently.temperature;
   			feelsLikeInC = 	weatherData.currently.apparentTemperature;
   			feelsLikeInF = ((weatherData.currently.apparentTemperature*9/5) + 32).toFixed(2);
 
   			//Load Quotes
-
   			var selectQuote = weatherData.currently.icon;
   			var loadQuote = $(".quote");
 
@@ -149,13 +158,12 @@ $(document).ready(function() {
 		});
 	}
 
+	//Calling the function to locate user and fetch the data
 	locateYou();
 
 	//Function for converting UNIX time to Local Time
-
 	function unixToTime(unix) {
 		unix *= 1000;
-		// timeFormatted = 0;
 		var toTime = new Date(unix);
 		var hour = ((toTime.getHours() % 12 || 12 ) < 10 ? '0' : '') + (toTime.getHours() % 12 || 12);
   	var minute = (toTime.getMinutes() < 10 ? '0' : '') + toTime.getMinutes();
@@ -168,15 +176,12 @@ $(document).ready(function() {
 		var toWeekday = new Date(unix);
 		var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 		var weekday = days[toWeekday.getDay()];
-		console.log(weekday);
 		return weekday;
 	}
 
 	//UI Tweaks
-
 	$(".convertToggle").on("click", function() {
 		$(".toggleIcon").toggleClass("ion-toggle-filled");
-		// $(".currentTemp").text(tempInF);
 		var tmpNow = $(".currentTemp");
 		var unit = $(".unit");
 		var feelsLike = $(".feelsLike");
@@ -193,19 +198,24 @@ $(document).ready(function() {
 	});
 
 
-	//Google location Search
+	//Smooth Scrool to Weekly Forecast section
+	$(".goToWeek").on("click", function() {
+		$('html, body').animate({
+	    scrollTop: $("#weeklyForecast").offset().top
+		}, 1000);
+	});
 
+
+	//Google location Search
 	function initialize() { 
     var input = document.getElementById('locSearchBox');
     var autocomplete = new google.maps.places.Autocomplete(input);
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
       var place = autocomplete.getPlace();
-      console.log(place);
-      console.log(place.formatted_address);
       lat = place.geometry.location.lat();
       lon = place.geometry.location.lng();
-      // yourAddress();
       $(".locName").html(place.formatted_address);
+      //Calling the getWeather function to fetch data for Searched location
       getWeather();
     	});
 	}

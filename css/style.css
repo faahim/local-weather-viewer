@@ -9,7 +9,8 @@ body {
 
 #dailyForecast {
   display: flex;
-  vertical-align: middle; }
+  vertical-align: middle;
+  margin-bottom: 50px; }
   #dailyForecast .searchBar {
     padding: 20px 0; }
     #dailyForecast .searchBar #locSearchBox {
@@ -129,7 +130,7 @@ body {
   padding: 20px 0 30px; }
   #weeklyForecast h3 {
     line-height: 50px;
-    margin: 80px 0 30px; }
+    margin: 20px 0 30px; }
   #weeklyForecast .weekRows {
     margin: 50px 0; }
     #weeklyForecast .weekRows .dayCard {
@@ -176,6 +177,15 @@ body {
           #weeklyForecast .weekRows .dayCard .dayInfoHighlight .weekDayWindnHumidity p:last-child {
             margin-right: 0; }
 
+#footer .love {
+  margin: 10px auto;
+  text-align: center; }
+  #footer .love .heartbeat {
+    color: #e80d2e;
+    font-size: 16px; }
+  #footer .love a {
+    text-decoration: none; }
+
 .pac-container {
   width: 100%;
   margin: 0 auto;
@@ -189,7 +199,7 @@ body {
 
 @media (min-width: 1920px) {
   #dailyForecast {
-    height: 100vh; } }
+    margin-bottom: 300px; } }
 @media (max-width: 1199px) {
   #dailyForecast .dashboard .dashboardDaily {
     margin-top: 50px; }
@@ -318,15 +328,5 @@ body {
 
   #footer p {
     width: 50%; } }
-.heartbeat {
-  color: #e80d2e;
-  font-size: 16px; }
-
-.love {
-  margin: 0 auto;
-  text-align: center; }
-
-.love > a {
-  text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */
