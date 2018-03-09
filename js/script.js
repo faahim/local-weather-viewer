@@ -48,7 +48,7 @@ $(document).ready(function() {
 
 	//After collecting the Latiture and Longitute, Getting their formatted address from Google Maps.
 	function yourAddress() {
-		var googleApiCall = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lon;
+		var googleApiCall = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCg2nJzBef2TpPVBg4lHKrMdmPRKEEBTtE&latlng="+lat+","+lon;
 		$.getJSON(googleApiCall, function(locationName){
 			$(".locName").html(locationName.results[2].formatted_address);
 			// console.log(locationName.results[2].formatted_address); (For checking the precision)
