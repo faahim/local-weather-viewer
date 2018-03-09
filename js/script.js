@@ -48,7 +48,8 @@ $(document).ready(function() {
 
 	//After collecting the Latiture and Longitute, Getting their formatted address from Google Maps.
 	function yourAddress() {
-		var googleApiCall = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCg2nJzBef2TpPVBg4lHKrMdmPRKEEBTtE&latlng="+lat+","+lon;
+		var googleApiCall = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lon+"&key=AIzaSyCzBRBeDmF68IzWhJfnRp04BGxqMych358";
+		console.log(googleApiCall);
 		$.getJSON(googleApiCall, function(locationName){
 			$(".locName").html(locationName.results[2].formatted_address);
 			// console.log(locationName.results[2].formatted_address); (For checking the precision)
@@ -210,7 +211,7 @@ $(document).ready(function() {
 	function initialize() { 
     var input = document.getElementById('locSearchBox');
     var autocomplete = new google.maps.places.Autocomplete(input);
-    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+    autocomplete.addListener('place_changed', function () {
       var place = autocomplete.getPlace();
       lat = place.geometry.location.lat();
       lon = place.geometry.location.lng();
