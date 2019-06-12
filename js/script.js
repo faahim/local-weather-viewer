@@ -24,12 +24,11 @@ $(document).ready(function() {
 	function locateYou() {
 		//Try to get users location using their IP adress automattically.
 		//It's not very precise but It's a way to get users location even if
-		//their browser doesn't support Geolocation or if they refuse to share it.
+		//their browser doesn't support Geolocation
 		var ipApiCall = "https://ipapi.co/json";
 		$.getJSON(ipApiCall, function(ipData){
 			lat = ipData.latitude;
 			lon = ipData.longitude;
-			//console.log(lat+" "+lon+"ip"); (For Debugginh)
 			yourAddress();
 			getWeather();
 		});
@@ -52,14 +51,13 @@ $(document).ready(function() {
 		console.log(googleApiCall);
 		$.getJSON(googleApiCall, function(locationName){
 			$(".locName").html(locationName.results[2].formatted_address);
-			// console.log(locationName.results[2].formatted_address); (For checking the precision)
 		});
 	}
 
 	function getWeather() {
 		//Looking up the weather from Darkskies using users latitude and longitude.
 		//Please don't use this API key. Get your own from DarkSkies.
-		var weatherApiKey = "a3219d4e2772db6e34c6491e62144b27";
+		var weatherApiKey = "2e99be7a3e035cefe72de27481239a77";
 		var weatherApiCall = "https://api.darksky.net/forecast/"+weatherApiKey+"/"+lat+","+lon+"?units=si";
 		$.ajax({
 			url: weatherApiCall,
